@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="scripts/index.js"></script>
+  <link href="styles/stylesheet.css" type="text/css" rel="stylesheet">
+  <title>INFO 3300 Project 2</title>
+</head>
+<body>
+  <div id="donut_chart_container">
+    <h2>People Killed by Drugs in 2012</h2>
+    <div id="donut_chart"></div>
+  </div>
+</body>
+<script>
+
+var donut = donutChart()
+.width(980)
+.height(500)
+.cornerRadius(10) // sets how rounded the corners are on each slice
+.padAngle(0.015) // effectively dictates the gap between slices
+.variable('Percentage')
+.category('Drug');
+
+d3.csv('data/2012_people_killed_by_drugs.csv', function(error, data) {
+  if (error) throw error;
+  d3.select('#donut_chart')
+  .datum(data) // bind data to the div
+  .call(donut); // draw chart in div
+});
+
+</script>
+</html>
