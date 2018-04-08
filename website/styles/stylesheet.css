@@ -17,6 +17,12 @@ h2{
   width: 1000px;
 }
 
+#donut_chart_container p{
+  margin-left: 75px;
+  padding-right: 75px;
+  padding-bottom: 5px;
+}
+
 /*Styling for the lines connecting the labels to the slices*/
 polyline{
     opacity: .5;
