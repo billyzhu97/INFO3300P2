@@ -82,8 +82,11 @@ function donutChart() {
       .enter().append('text')
       .attr('dy', '.35em')
       .html(function(d) {
-        // add "key: value" for given category. Number inside tspan is bolded in stylesheet.
-        return d.data[category] + ': <tspan>' + percentFormat(d.data[variable]) + '</tspan>';
+        if (!(d.data[category]=="Marijuana" || d.data[category]=="Hallucinogen" || d.data[category]=="Inhalant")){
+          // add "key: value" for given category. Number inside tspan is bolded in stylesheet.
+          return d.data[category] + ': <tspan>' + percentFormat(d.data[variable]) + '</tspan>';
+        }
+
       })
       .attr('transform', function(d) {
 
@@ -109,10 +112,13 @@ function donutChart() {
       .enter().append('polyline')
       .attr('points', function(d) {
 
-        // see label transform function for explanations of these three lines.
-        var pos = outerArc.centroid(d);
-        pos[0] = radius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1);
-        return [arc.centroid(d), outerArc.centroid(d), pos]
+        if (!(d.data[category]=="Marijuana" || d.data[category]=="Hallucinogen" || d.data[category]=="Inhalant")){
+          // see label transform function for explanations of these three lines.
+          var pos = outerArc.centroid(d);
+          pos[0] = radius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1);
+          return [arc.centroid(d), outerArc.centroid(d), pos]
+        }
+
       });
       // ===========================================================================================
 
