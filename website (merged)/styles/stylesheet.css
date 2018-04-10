@@ -1,0 +1,38 @@
+*{
+  border: 0px;
+  margin: 0px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+}
+
+h2{
+  text-align: center;
+}
+
+#donut_chart_container{
+  margin: 20px;
+  width: 1000px;
+}
+
+#donut_chart_container p{
+  margin-left: 75px;
+  padding-right: 75px;
+  padding-bottom: 5px;
+}
+
+/*Styling for the lines connecting the labels to the slices*/
+polyline{
+    opacity: .5;
+    stroke: black;
+    stroke-width: 5px;
+    fill: none;
+}
+
+/* Make the percentage on the text labels bold*/
+.labelName tspan {
+    font-style: normal;
+    font-weight: 700;
+}

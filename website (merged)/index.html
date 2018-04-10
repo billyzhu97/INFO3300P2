@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="scripts/index.js"></script>
+  <link href="styles/stylesheet.css" type="text/css" rel="stylesheet">
+  <title>INFO 3300 Project 2</title>
+</head>
+<body>
+  <div id="barchart"></div>
+  <div id="donut_chart_container">
+    <h2>People Killed by Drugs in 2012</h2>
+    <div id="donut_chart"></div>
+    <p>
+      * Stimulants have been grouped with methamphetamine while crack has been
+      grouped with cocaine.
+    </p>
+    <p>
+      * According to the DEA, no one has died of marijuana overdose before.
+      Its effects take place over time.
+    </p>
+    <p>
+      * While hallucinogens have a reputation of being particularly deadly drugs,
+      it is rare for a person to die strictly of any physical, overdose effects.
+    </p>
+    <p>
+      * The number of lives claimed by inhalant abuse each year is unknown because
+      these deaths often are attributed to other causes.
+    </p>
+  </div>
+</body>
+<script>
+
+var donut = donutChart()
+.width(980)
+.height(500)
+.cornerRadius(10) // sets how rounded the corners are on each slice
+.padAngle(0.015) // effectively dictates the gap between slices
+.variable('Percentage')
+.category('Drug');
+
+d3.csv('data/2012_people_killed_by_drugs.csv', function(error, data) {
+  if (error) throw error;
+  d3.select('#donut_chart')
+  .datum(data) // bind data to the div
+  .call(donut); // draw chart in div
+});
+
+
+
+//Set up the margins and width and height
+var margin = {top: 50, left: 50, bottom: 50, right: 50}
+var width = 1500 - margin.left - margin.right
+var height = 1000 - margin.top - margin.bottom
+
+
+//Create the SVG for the graph
+var svg = d3.select("#barchart")
+.append("svg")
+.attr("width", width + margin.right + margin.left)
+.attr("height", height + margin.top + margin.bottom)
+.append("g")				//groups all the elements together
+
+//Create a scaleBand, this has an ordinal domain and continuous range
+var y = d3.scaleBand().rangeRound([0, height])
+.paddingInner(0.30)
+.align(0.5)
+
+//Create a linearScale, this has a continuous range
+var x = d3.scaleLinear().rangeRound([0, width])
+
+//The color scheme for the graph
+var color = d3.scaleOrdinal().range(["#420039", "#932F6D", "#E07BE0", "#DCCCFF", "#A077FF", "#FF00DD", "#2DB7BF",
+"#E0DC62", "#FFCCDA", "#4C00FF", "#CCFFE2", "#ED2D70", "#FF8E16"])
+
+
+var tooltip = svg.append("g")
+.attr("class", "tooltip")
+.style("display", "none");
+
+tooltip.append("rect")
+.attr("width", 60)
+.attr("height", 20)
+.attr("fill", "red")
+.style("opacity", 0.5);
+
+tooltip.append("text")
+.attr("x", 30)
+.attr("dy", "1.2em")
+.style("text-anchor", "middle")
+.attr("font-size", "12px")
+.attr("font-weight", "bold");
+
+
+//Read the CSV file
+d3.csv("data/drug-use-by-age.csv", function(d, i, columns) {
+  for (i = 1, t = 0; i < columns.length; ++i)
+  t += d[columns[i]] = +d[columns[i]]				//Need +d[columns[i]] to change the string value into a number
+  d.total = t
+  //console.log(d.total)
+  //console.log(d)
+  //Returns the row object
+  return d
+},
+function (error, data){
+  if (error) throw error;
+
+  //Keys contains the headers
+  var keys = data.columns.slice(1)
+  console.log(keys)
+
+  //Returns the ages in an array
+  y.domain(data.map(function(d){return d.age}))
+
+  //Set the domain of the x value to be from 0 to max
+  x.domain([0, d3.max(data, function(d){return d.total})])
+
+  //Maps the keys to the colors
+  color.domain(keys)
+
+
+
+  var tempKey;
+
+  d3.select("g").append("g")
+
+  .selectAll("g")
+  .data(d3.stack().keys(keys)(data))
+  .enter().append("g")
+  .attr("fill", function(d) {return color(d.key); })
+  .attr("class", function(d) {return d.key})
+  .selectAll("rect")
+  .data(function(d) {return d;})
+  .enter().append("rect")
+  .attr("y", function(d) {return y(d.data.age)})
+  .attr("x", function(d) {return x(d[0])})
+  .attr("width", function(d) { return x(d[1]) - x(d[0]); })
+  .attr("height", y.bandwidth())
+
+
+})
+
+
+</script>
+</html>
