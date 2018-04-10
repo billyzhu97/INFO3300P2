@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<head>
+	<title> INFO 3300: Project 2</title>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+	<style>
+
+	.alcohol-use:hover{
+		fill: #555;
+	}
+
+	.marijuana-use:hover{
+		fill: #555;
+	}
+
+	.cocaine-use:hover{
+		fill: #555;
+	}
+
+	.crack-use:hover{
+		fill: #555;
+	}
+
+	.heroin-use:hover{
+		fill: #555;
+	}
+
+	.hallucinogen-use:hover{
+		fill: #555;
+	}
+
+	.inhalant-use:hover{
+		fill: #555;
+	}
+
+	.pain-releiver-use:hover{
+		fill: #555;
+	}
+
+	.oxycontin-use:hover{
+		fill: #555;
+	}
+
+	.tranquilizer-use:hover{
+		fill: #555;
+	}
+
+	.stimulant-use:hover{
+		fill: #555;
+	}
+
+	.meth-use:hover{
+		fill: #555;
+	}
+
+	.sedative-use:hover{
+		fill: #555;
+	}
+
+
+	</style>
+</head>
+
+<body>
+<script type = "text/javascript">
+
+
+	//Set up the margins and width and height
+	var margin = {top: 50, left: 50, bottom: 50, right: 50}
+	var width = 1500 - margin.left - margin.right
+	var height = 1000 - margin.top - margin.bottom
+
+
+	//Create the SVG for the graph
+	var svg = d3.select("body")
+				.append("svg")
+				.attr("width", width + margin.right + margin.left)
+				.attr("height", height + margin.top + margin.bottom)
+				.append("g")				//groups all the elements together
+
+	//Create a scaleBand, this has an ordinal domain and continuous range
+	var y = d3.scaleBand().rangeRound([0, height])
+			.paddingInner(0.30)
+			.align(0.5)
+
+	//Create a linearScale, this has a continuous range
+	var x = d3.scaleLinear().rangeRound([0, width])
+
+	//The color scheme for the graph
+	var color = d3.scaleOrdinal().range(["#420039", "#932F6D", "#E07BE0", "#DCCCFF", "#A077FF", "#FF00DD", "#2DB7BF", 
+		"#E0DC62", "#FFCCDA", "#4C00FF", "#CCFFE2", "#ED2D70", "#FF8E16"])	
+
+
+	 var tooltip = svg.append("g")
+    .attr("class", "tooltip")
+    .style("display", "none");
+      
+  	tooltip.append("rect")
+    .attr("width", 60)
+    .attr("height", 20)
+    .attr("fill", "red")
+    .style("opacity", 0.5);
+
+  	tooltip.append("text")
+    .attr("x", 30)
+    .attr("dy", "1.2em")
+    .style("text-anchor", "middle")
+    .attr("font-size", "12px")
+    .attr("font-weight", "bold");
+
+
+	//Read the CSV file
+	d3.csv("drug-use-by-age.csv", function(d, i, columns) {
+		for (i = 1, t = 0; i < columns.length; ++i)
+			t += d[columns[i]] = +d[columns[i]]				//Need +d[columns[i]] to change the string value into a number
+		d.total = t
+		//console.log(d.total)
+		//console.log(d)
+		//Returns the row object
+		return d 											
+		},
+		function (error, data){
+			if (error) throw error;
+
+			//Keys contains the headers
+			var keys = data.columns.slice(1)
+			console.log(keys)				
+
+			//Returns the ages in an array
+			y.domain(data.map(function(d){return d.age}))
+
+			//Set the domain of the x value to be from 0 to max
+			x.domain([0, d3.max(data, function(d){return d.total})])
+
+			//Maps the keys to the colors
+			color.domain(keys)
+
+
+
+		var tempKey;
+
+		d3.select("g").append("g")
+
+		.selectAll("g")
+		.data(d3.stack().keys(keys)(data))
+		.enter().append("g")
+		.attr("fill", function(d) {return color(d.key); })
+		.attr("class", function(d) {return d.key})
+		
+		//		.attr("fill", function(d) { d.hello = "hello"; console.log(d); console.log(d.key); return color(d.key); })
+
+		.selectAll("rect")
+		.data(function(d) {return d;})
+		.enter().append("rect")
+		
+		.attr("y", function(d) {return y(d.data.age)})
+		.attr("x", function(d) {return x(d[0])})
+		.attr("width", function(d) { return x(d[1]) - x(d[0]); })
+		.attr("height", y.bandwidth())
+		//.attr("class", "alcohol-use")
+
+
+		
+		//function(d) {console.log(d);return d.key;}
+
+		/*
+		.on('mouseover', (d, i, nodes) => d3.select(nodes[i]).attr('fill', '#555'))
+
+    	.on("mouseout", function() { tooltip.style("display", "none"); })
+		.on("mousemove", function(d){
+						var xPosition = d3.mouse(this)[0] - 5;
+      					var yPosition = d3.mouse(this)[1] - 5;		
+						tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
+						tooltip.select("text").text(d.age); 
+						console.log("hello")});		
+		*/
+
+
+		})
+
+	/*
+	svg:hover .alcohol-use{
+		fill: #555;
+	}
+	*/
+	
+
+</script>
+</body>
+</html>	
+
+
