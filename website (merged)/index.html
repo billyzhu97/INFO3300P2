@@ -8,6 +8,9 @@
 </head>
 <body>
   <div id="barchart"></div>
+  <div id="clickBox">
+    
+  </div>
   <div id="donut_chart_container">
     <h2>People Killed by Drugs in 2012</h2>
     <div id="donut_chart"></div>
@@ -50,7 +53,7 @@ d3.csv('data/2012_people_killed_by_drugs.csv', function(error, data) {
 
 //Set up the margins and width and height
 var margin = {top: 50, left: 50, bottom: 50, right: 50}
-var width = 1500 - margin.left - margin.right
+var width = 1000 - margin.left - margin.right
 var height = 1000 - margin.top - margin.bottom
 
 
@@ -128,7 +131,9 @@ function (error, data){
   .data(d3.stack().keys(keys)(data))
   .enter().append("g")
   .attr("fill", function(d) {return color(d.key); })
+  .attr("opacity", "0.5")
   .attr("class", function(d) {return d.key})
+  .attr("id", function(d) {return d.key})
   .selectAll("rect")
   .data(function(d) {return d;})
   .enter().append("rect")
@@ -136,6 +141,77 @@ function (error, data){
   .attr("x", function(d) {return x(d[0])})
   .attr("width", function(d) { return x(d[1]) - x(d[0]); })
   .attr("height", y.bandwidth())
+  
+  d3.select("#barchart")
+  .select("svg")
+  .append("rect")
+  .attr("fill", "#420039")
+  .attr("width", 50)
+  .attr("height", 20)
+  .attr("x", 10)             
+  .attr("y", 980)
+  .on("click", function(){ 
+        // Determine if current line is visible
+        var active   = alcohol_use.active ? false : true ,
+          newOpacity = active ? 1 : .5;
+        // Hide or show the elements
+        d3.selectAll(".alcohol_use").style("opacity", newOpacity);
+        //d3.select("#rect2").style("opacity", newOpacity);
+        // Update whether or not the elements are active
+        alcohol_use.active = active;
+      
+  })
+      
+  d3.select("#barchart")
+  .select("svg")
+  .append("rect")
+  .attr("fill", "#932F6D")
+  .attr("width", 50)
+  .attr("height", 20)
+  .attr("x", 65)             
+  .attr("y", 980)
+  .on("click", function(){ 
+        // Determine if current line is visible
+        var active   = marijuana_use.active ? false : true ,
+          newOpacity = active ? 1 : .5;
+        // Hide or show the elements
+        d3.selectAll(".marijuana_use").style("opacity", newOpacity);
+        //d3.select("#rect2").style("opacity", newOpacity);
+        // Update whether or not the elements are active
+        marijuana_use.active = active;
+      
+  })
+  
+  
+//  d3.select("#barchart")
+//  .select("svg")
+//  .data(data)
+//  .enter()
+//  .append("rect")
+//  .attr("fill", function(d){return color(d.key);})
+//  .attr("width", 50)
+//  .attr("height", 50)
+//  .attr("x", function(d) {return x(d[0]); })
+//  .attr("y", 950)
+//  .on("click", function(d){ 
+//        // Determine if current line is visible
+//        var active   = d.key.active ? false : true ,
+//          newOpacity = active ? 1 : .5;
+//        // Hide or show the elements
+//        d3.selectAll("."+d.key).style("opacity", newOpacity);
+//        //d3.select("#rect2").style("opacity", newOpacity);
+//        // Update whether or not the elements are active
+//        d.key.active = active;
+//  
+//  
+//  
+//  
+ 
+  
+  
+  
+  
+  
 
 
 })

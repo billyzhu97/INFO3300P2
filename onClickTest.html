@@ -7,8 +7,8 @@
 </head>
 <body>
     <svg width = "1000" height = "1000">
-        <rect x = "0" y = "0" width="150" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0);opacity:.5" id = "rect1" /> 
-        <rect x = "155" y = "0" width="150" height="100" style="fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0);opacity:.5" id = "rect2" />  
+        <rect x = "0" y = "0" width="150" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0);opacity:.1" class = "group1"  id = "rect1"/> 
+        <rect x = "155" y = "0" width="150" height="100" style="fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0);opacity:.1" class = "group1" />  
 
     </svg>
     <script>
@@ -23,15 +23,14 @@
         .attr("height", 20)
         .attr("x", 0)             
         .attr("y", 125)    
-        .attr("class", "legend")
         .style("fill", "red")
         .on("click", function(){
             // Determine if current line is visible
             var active   = rect1.active ? false : true ,
-              newOpacity = active ? 1 : .5;
+              newOpacity = active ? 1 : .1;
             // Hide or show the elements
-            d3.select("#rect1").style("opacity", newOpacity);
-            d3.select("#rect2").style("opacity", newOpacity);
+            d3.selectAll(".group1").style("opacity", newOpacity);
+            //d3.select("#rect2").style("opacity", newOpacity);
             // Update whether or not the elements are active
             rect1.active = active;
         })

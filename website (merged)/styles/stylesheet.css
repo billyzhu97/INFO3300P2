@@ -37,54 +37,54 @@ polyline{
     font-weight: 700;
 }
 
-.alcohol-use:hover{
+.alcohol_use:hover{
 		fill: #555;
 	}
 
-	.marijuana-use:hover{
+	.marijuana_use:hover{
 		fill: #555;
 	}
 
-	.cocaine-use:hover{
+	.cocaine_use:hover{
 		fill: #555;
 	}
 
-	.crack-use:hover{
+	.crack_use:hover{
 		fill: #555;
 	}
 
-	.heroin-use:hover{
+	.heroin_use:hover{
 		fill: #555;
 	}
 
-	.hallucinogen-use:hover{
+	.hallucinogen_use:hover{
 		fill: #555;
 	}
 
-	.inhalant-use:hover{
+	.inhalant_use:hover{
 		fill: #555;
 	}
 
-	.pain-releiver-use:hover{
+	.pain_releiver_use:hover{
 		fill: #555;
 	}
 
-	.oxycontin-use:hover{
+	.oxycontin_use:hover{
 		fill: #555;
 	}
 
-	.tranquilizer-use:hover{
+	.tranquilizer_use:hover{
 		fill: #555;
 	}
 
-	.stimulant-use:hover{
+	.stimulant_use:hover{
 		fill: #555;
 	}
 
-	.meth-use:hover{
+	.meth_use:hover{
 		fill: #555;
 	}
 
-	.sedative-use:hover{
+	.sedative_use:hover{
 		fill: #555;
 	}
