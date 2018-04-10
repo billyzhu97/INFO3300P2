@@ -50,6 +50,19 @@ function donutChart() {
       svg.append('g').attr('class', 'slices');
       svg.append('g').attr('class', 'labelName');
       svg.append('g').attr('class', 'lines');
+
+      svg.append('circle')
+      .attr('class', 'initial_circle')
+      .attr('r', radius * 0.55) // radius of tooltip circle
+      .style('fill', '#416d9c') // colour based on category mouse is over
+      .style('fill-opacity', 0.35);
+
+      svg.append('text')
+      .attr('class', 'initial_text')
+      .attr('dy', 0) // hard-coded. can adjust this to adjust text vertical alignment in tooltip
+      .html('42194 people were killed by drugs in 2012') // add text to the circle.
+      .style('font-size', '.9em')
+      .style('text-anchor', 'middle'); // centres text in tooltip
       // ===========================================================================================
 
       // ===========================================================================================
@@ -120,6 +133,8 @@ function donutChart() {
         // add tooltip (svg circle element) when mouse enters label or slice
         selection.on('mouseenter', function (data) {
 
+          d3.selectAll('.initial_text').remove();
+
           svg.append('text')
           .attr('class', 'toolCircle')
           .attr('dy', -15) // hard-coded. can adjust this to adjust text vertical alignment in tooltip
@@ -138,6 +153,13 @@ function donutChart() {
         // remove the tooltip when mouse leaves the slice/label
         selection.on('mouseout', function () {
           d3.selectAll('.toolCircle').remove();
+
+          svg.append('text')
+          .attr('class', 'initial_text')
+          .attr('dy', 0) // hard-coded. can adjust this to adjust text vertical alignment in tooltip
+          .html('42194 people were killed by drugs in 2012') // add text to the circle.
+          .style('font-size', '.9em')
+          .style('text-anchor', 'middle'); // centres text in tooltip
         });
       }
 
@@ -151,7 +173,14 @@ function donutChart() {
         for (var key in data.data) {
 
           // if value is a number, format it as a percentage
-          var value = data.data[key];
+
+          var value;
+          if(key=="Percentage"){
+            value = percentFormat(data.data[key])
+          }
+          else{
+            value = data.data[key];
+          }
 
           // leave off 'dy' attr for first tspan so the 'dy' attr on text element works. The 'dy' attr on
           // tspan effectively imitates a line break.
