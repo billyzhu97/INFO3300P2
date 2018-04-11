@@ -4,8 +4,8 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    color: #333333;
+  font-family: 'Roboto', sans-serif;
+  color: #333333;
 }
 
 h2{
@@ -25,66 +25,68 @@ h2{
 
 /*Styling for the lines connecting the labels to the slices*/
 polyline{
-    opacity: .5;
-    stroke: black;
-    stroke-width: 5px;
-    fill: none;
+  opacity: .5;
+  stroke: black;
+  stroke-width: 5px;
+  fill: none;
 }
 
 /* Make the percentage on the text labels bold*/
 .labelName tspan {
-    font-style: normal;
-    font-weight: 700;
+  font-style: normal;
+  font-weight: 700;
 }
 
-.alcohol_use:hover{
-		fill: #555;
-	}
+#alc_icon{
+  background-color:#420039;
+  opacity:0.5;
+}
 
-	.marijuana_use:hover{
-		fill: #555;
-	}
-
-	.cocaine_use:hover{
-		fill: #555;
-	}
-
-	.crack_use:hover{
-		fill: #555;
-	}
-
-	.heroin_use:hover{
-		fill: #555;
-	}
-
-	.hallucinogen_use:hover{
-		fill: #555;
-	}
-
-	.inhalant_use:hover{
-		fill: #555;
-	}
-
-	.pain_releiver_use:hover{
-		fill: #555;
-	}
-
-	.oxycontin_use:hover{
-		fill: #555;
-	}
-
-	.tranquilizer_use:hover{
-		fill: #555;
-	}
-
-	.stimulant_use:hover{
-		fill: #555;
-	}
-
-	.meth_use:hover{
-		fill: #555;
-	}
-
-	.sedative_use:hover{
-		fill: #555;
-	}
+#mar_icon{
+  background-color:#932F6D;
+  opacity:0.5;
+}
+#cocaine_icon{
+  background-color:#E07BE0;
+  opacity:0.5;
+}
+#crack_icon{
+  background-color:#DCCCFF;
+  opacity:0.5;
+}
+#heroin_icon{
+  background-color:#A077FF;
+  opacity:0.5;
+}
+#hal_icon{
+  background-color:#FF00DD;
+  opacity:0.5;
+}
+#inhalant_icon{
+  background-color:#2DB7BF;
+  opacity:0.5;
+}
+#pain_icon{
+  background-color:#E0DC62;
+  opacity:0.5;
+}
+#oxy_icon{
+  background-color:#FFCCDA;
+  opacity:0.5;
+}
+#tranq_icon{
+  background-color:#4C00FF;
+  opacity:0.5;
+}
+#stim_icon{
+  background-color:#CCFFE2;
+  opacity:0.5;
+}
+#meth_icon{
+  background-color:#ED2D70;
+  opacity:0.5;
+}
+#sedative_icon{
+  background-color:#FF8E16;
+  opacity:0.5;
+}

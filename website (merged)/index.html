@@ -3,13 +3,26 @@
 <head>
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="scripts/index.js"></script>
+  <script src="scripts/bar_chart.js"></script>
   <link href="styles/stylesheet.css" type="text/css" rel="stylesheet">
   <title>INFO 3300 Project 2</title>
 </head>
 <body>
   <div id="barchart"></div>
   <div id="clickBox">
-    
+    <img src="images/alcohol.png" height="64" width="64" class="alcohol_use" id="alc_icon"></img>
+    <img src="images/marijuana.png" height="64" width="64" class="marijuana_use" id="mar_icon"></img>
+    <img src="images/cocaine.png" height="64" width="64" class="cocaine_use" id="cocaine_icon"></img>
+    <img src="images/crack.png" height="64" width="64" class="crack_use" id="crack_icon"></img>
+    <img src="images/heroin.png" height="64" width="64" class="heroin_use" id="heroin_icon"></img>
+    <img src="images/hallucinogen.png" height="64" width="64" class="hallucinogen_use" id="hal_icon"></img>
+    <img src="images/inhalant.png" height="64" width="64" class="inhalant_use" id="inhalant_icon"></img>
+    <img src="images/pain_reliever.png" height="64" width="64" class="pain_reliever_use" id="pain_icon"></img>
+    <img src="images/oxycontin.png" height="64" width="64" class="oxycontin_use" id="oxy_icon"></img>
+    <img src="images/tranquilizer.png" height="64" width="64" class="tranquilizer_use" id="tranq_icon"></img>
+    <img src="images/stimulant.png" height="64" width="64" class="stimulant_use" id="stim_icon"></img>
+    <img src="images/meth.png" height="64" width="64" class="meth_use" id="meth_icon"></img>
+    <img src="images/sedative.png" height="64" width="64" class="sedative_use" id="sedative_icon"></img>
   </div>
   <div id="donut_chart_container">
     <h2>People Killed by Drugs in 2012</h2>
@@ -133,10 +146,10 @@ function (error, data){
   .attr("fill", function(d) {return color(d.key); })
   .attr("opacity", "0.5")
   .attr("class", function(d) {return d.key})
-  .attr("id", function(d) {return d.key})
   .selectAll("rect")
   .data(function(d) {return d;})
   .enter().append("rect")
+  .attr("class", function(d){return d})
   .attr("y", function(d) {return y(d.data.age)})
   .attr("x", function(d) {return x(d[0])})
   .attr("width", function(d) { return x(d[1]) - x(d[0]); })
@@ -149,11 +162,11 @@ function (error, data){
       tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")").style("pointer-events", "none");
       tooltip.select("text").text((d[1]-d[0]).toPrecision(4)+"%");
     });
-    
+
     var tooltip = svg.append("g")
     .attr("class", "tooltip")
     .style("display", "none");
-      
+
   tooltip.append("rect")
     .attr("width", 60)
     .attr("height", 20)
@@ -166,55 +179,18 @@ function (error, data){
     .style("text-anchor", "middle")
     .attr("font-size", "12px")
     .attr("font-weight", "bold");
-  
-  d3.select("#barchart")
-  .select("svg")
-  .append("rect")
-  .attr("fill", "#420039")
-  .attr("width", 50)
-  .attr("height", 20)
-  .attr("x", 10)             
-  .attr("y", 980)
-  .on("click", function(){ 
-        // Determine if current line is visible
-        var active   = alcohol_use.active ? false : true ,
-          newOpacity = active ? 1 : .5;
-        // Hide or show the elements
-        d3.selectAll(".alcohol_use").style("opacity", newOpacity);
-        //d3.select("#rect2").style("opacity", newOpacity);
-        // Update whether or not the elements are active
-        alcohol_use.active = active;
-      
-  })
-      
-  d3.select("#barchart")
-  .select("svg")
-  .append("rect")
-  .attr("fill", "#932F6D")
-  .attr("width", 50)
-  .attr("height", 20)
-  .attr("x", 65)             
-  .attr("y", 980)
-  .on("click", function(){ 
-        // Determine if current line is visible
-        var active   = marijuana_use.active ? false : true ,
-          newOpacity = active ? 1 : .5;
-        // Hide or show the elements
-        d3.selectAll(".marijuana_use").style("opacity", newOpacity);
-        //d3.select("#rect2").style("opacity", newOpacity);
-        // Update whether or not the elements are active
-        marijuana_use.active = active;
-      
-  })
-  
-  
 
- 
-  
-  
-  
-  
-  
+hover();
+
+
+
+
+
+
+
+
+
+
 
 
 })
