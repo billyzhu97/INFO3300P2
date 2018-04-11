@@ -141,6 +141,31 @@ function (error, data){
   .attr("x", function(d) {return x(d[0])})
   .attr("width", function(d) { return x(d[1]) - x(d[0]); })
   .attr("height", y.bandwidth())
+  .on("mouseover", function() { tooltip.style("display", null); })
+    .on("mouseout", function() { tooltip.style("display", "none"); })
+    .on("mousemove", function(d) {
+      var xPosition = d3.mouse(this)[0] - 5;
+      var yPosition = d3.mouse(this)[1] - 5;
+      tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")").style("pointer-events", "none");
+      tooltip.select("text").text((d[1]-d[0]).toPrecision(4)+"%");
+    });
+    
+    var tooltip = svg.append("g")
+    .attr("class", "tooltip")
+    .style("display", "none");
+      
+  tooltip.append("rect")
+    .attr("width", 60)
+    .attr("height", 20)
+    .attr("fill", "white")
+    .style("opacity", 0.5);
+
+  tooltip.append("text")
+    .attr("x", 30)
+    .attr("dy", "1.2em")
+    .style("text-anchor", "middle")
+    .attr("font-size", "12px")
+    .attr("font-weight", "bold");
   
   d3.select("#barchart")
   .select("svg")
@@ -183,29 +208,7 @@ function (error, data){
   })
   
   
-//  d3.select("#barchart")
-//  .select("svg")
-//  .data(data)
-//  .enter()
-//  .append("rect")
-//  .attr("fill", function(d){return color(d.key);})
-//  .attr("width", 50)
-//  .attr("height", 50)
-//  .attr("x", function(d) {return x(d[0]); })
-//  .attr("y", 950)
-//  .on("click", function(d){ 
-//        // Determine if current line is visible
-//        var active   = d.key.active ? false : true ,
-//          newOpacity = active ? 1 : .5;
-//        // Hide or show the elements
-//        d3.selectAll("."+d.key).style("opacity", newOpacity);
-//        //d3.select("#rect2").style("opacity", newOpacity);
-//        // Update whether or not the elements are active
-//        d.key.active = active;
-//  
-//  
-//  
-//  
+
  
   
   
