@@ -50,43 +50,105 @@ polyline{
   background-color:#E07BE0;
   opacity:0.5;
 }
+
+/*
 #crack_icon{
   background-color:#DCCCFF;
   opacity:0.5;
 }
+*/
+
 #heroin_icon{
-  background-color:#A077FF;
+  background-color:#DCCCFF;
   opacity:0.5;
 }
 #hal_icon{
-  background-color:#FF00DD;
+  background-color:#A077FF;
   opacity:0.5;
 }
 #inhalant_icon{
-  background-color:#2DB7BF;
+  background-color:#FF00DD;
   opacity:0.5;
 }
 #pain_icon{
-  background-color:#E0DC62;
+  background-color:#2DB7BF;
   opacity:0.5;
 }
 #oxy_icon{
-  background-color:#FFCCDA;
+  background-color:#E0DC62;
   opacity:0.5;
 }
 #tranq_icon{
-  background-color:#4C00FF;
+  background-color:#FFCCDA;
   opacity:0.5;
 }
 #stim_icon{
-  background-color:#CCFFE2;
+  background-color:#4C00FF;
   opacity:0.5;
 }
 #meth_icon{
-  background-color:#ED2D70;
+  background-color:#CCFFE2;
   opacity:0.5;
 }
 #sedative_icon{
-  background-color:#FF8E16;
+  background-color:#ED2D70;
   opacity:0.5;
 }
+
+
+
+#alcohol_info{
+  display: none;
+}
+
+#marijuana_info{
+  display: none;
+}
+
+#cocaine_info{
+  display: none;
+}
+
+
+/*
+#crack_info{
+  display: none;
+}
+*/
+
+#heroin_info{
+  display: none;
+}
+
+#hallucinogen_info{
+  display: none;
+}
+
+#inhalant_info{
+  display: none;
+}
+
+#pain_reliever_info{
+  display: none;
+}
+
+#oxycontin_info{
+  display: none;
+}
+
+#tranquilizer_info{
+  display: none;
+}
+
+#stimulant_info{
+  display: none;
+}
+
+#meth_info{
+  display: none;
+}
+
+#sedative_info{
+  display: none;
+}
+

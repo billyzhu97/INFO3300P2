@@ -13,7 +13,7 @@
     <img src="images/alcohol.png" height="64" width="64" class="alcohol_use" id="alc_icon"></img>
     <img src="images/marijuana.png" height="64" width="64" class="marijuana_use" id="mar_icon"></img>
     <img src="images/cocaine.png" height="64" width="64" class="cocaine_use" id="cocaine_icon"></img>
-    <img src="images/crack.png" height="64" width="64" class="crack_use" id="crack_icon"></img>
+    <!-- <img src="images/crack.png" height="64" width="64" class="crack_use" id="crack_icon"></img> -->
     <img src="images/heroin.png" height="64" width="64" class="heroin_use" id="heroin_icon"></img>
     <img src="images/hallucinogen.png" height="64" width="64" class="hallucinogen_use" id="hal_icon"></img>
     <img src="images/inhalant.png" height="64" width="64" class="inhalant_use" id="inhalant_icon"></img>
@@ -24,6 +24,79 @@
     <img src="images/meth.png" height="64" width="64" class="meth_use" id="meth_icon"></img>
     <img src="images/sedative.png" height="64" width="64" class="sedative_use" id="sedative_icon"></img>
   </div>
+  <div id = "information">
+
+    <!-- ALCOHOL -->
+    <div id="alcohol_info"> 
+      <h3> Alcohol </h3>
+      <p> Alcohol is a a drink that contains ethanol. Drinking too much at once can cause a variety of problems related to the following:</p>
+      <br>
+      <ul>
+        <li>Brain: Interferes with the brains communication pathways</li>
+        <li>Heart: Can cause stroke, high blood pressure, irregular heart beat</li>
+        <li>Pancreas: Can cause pancreatitis, which prevents proper digestion</li>
+        <li>Cancers: Increases the risk of developing mouth, esophagus, throat, and other cancers </li>
+      </ul> 
+      <br>
+      <p>To learn more about alcohol's effect, please visit <a href="https://www.niaaa.nih.gov/alcohol-health/alcohols-effects-body">The National Institute on Alcohol Abuse and Alcoholism</a></p> 
+
+      <p>Have a problem with Alcohol? <a href="https://www.niaaa.nih.gov/alcohol-health/support-treatment">Alcoholism Help and Support</a></p> 
+    </div>
+
+    <!-- MARIJUANA -->
+    <div id="marijuana_info">
+      <h3> Marijuana </h3>
+      <p> Marijuana, also known as weed, is from the dried leaves of the Cannabis sativa plant. Marijuana is the most common illicit drug in the US, but lot of discussion has gone into legalizing it. Marijuana can cause the following:</p>
+      <br>
+      <ul>
+        <li>Brain Overactivity </li>
+        <li>Altered Senses</li>
+        <li>Hallucinations</li>
+        <li>Changes in mood</li>
+        <li>Increased heart rate</li>
+      </ul> 
+      <br>
+      <p>To learn more about marijuana's effect, please visit <a href="https://www.drugabuse.gov/publications/drugfacts/marijuana">The National Institute on Drug Abuse</a></p> 
+
+      <p>Have a problem with Marijuana? <a href="https://www.recovery.org/topics/find-a-reputable-marijuana-addiction-recovery-hotline/">Marijuana Recovery</a></p>
+    </div>
+
+    <!-- COCAINE -->
+    <div id="cocaine_info">
+      <h3> Cocaine </h3>
+      <p> Cocaine is an addictive, white stimulant drug powder. </p>
+      <br>
+      <ul>
+        <li>Brain Overactivity </li>
+        <li>Altered Senses</li>
+        <li>Hallucinations</li>
+        <li>Changes in mood</li>
+        <li>Increased heart rate</li>
+      </ul> 
+      <br>
+      <p>To learn more about marijuana's effect, please visit <a href="https://www.drugabuse.gov/publications/drugfacts/marijuana">The National Institute on Drug Abuse</a></p> 
+
+      <p>Have a problem with Marijuana? <a href="https://www.recovery.org/topics/find-a-reputable-marijuana-addiction-recovery-hotline/">Marijuana Recovery</a></p>
+    </div>
+
+
+
+    <div id="heroin_info"> <p> Information about heroin</p></div>
+    <div id="hallucinogen_info"> <p> Information about hallucinogen</p></div>
+    <div id="inhalant_info"> <p> Information about inhalant</p></div>
+    <div id="pain_reliever_info"> <p> Information about pain reliever</p></div>
+    <div id="oxycontin_info"> <p> Information about oxycontin</p></div>
+    <div id="tranquilizer_info"> <p> Information about tranquilizer</p></div>
+    <div id="stimulant_info"> <p> Information about stimulants</p></div>
+    <div id="meth_info"> <p> Information about meth</p></div>
+    <div id="sedative_info"> <p> Information about sedative</p></div>
+
+
+  </div>
+  <!--Look at it so that the text in information is empty. Then when we hover over something, we change the inner text -->
+
+
+
   <div id="donut_chart_container">
     <h2>People Killed by Drugs in 2012</h2>
     <div id="donut_chart"></div>
@@ -66,8 +139,8 @@ d3.csv('data/2012_people_killed_by_drugs.csv', function(error, data) {
 
 //Set up the margins and width and height
 var margin = {top: 50, left: 50, bottom: 50, right: 50}
-var width = 1000 - margin.left - margin.right
-var height = 1000 - margin.top - margin.bottom
+var width = 750 - margin.left - margin.right
+var height = 500 - margin.top - margin.bottom
 
 
 //Create the SVG for the graph
@@ -87,7 +160,7 @@ var x = d3.scaleLinear().rangeRound([0, width])
 
 //The color scheme for the graph
 var color = d3.scaleOrdinal().range(["#420039", "#932F6D", "#E07BE0", "#DCCCFF", "#A077FF", "#FF00DD", "#2DB7BF",
-"#E0DC62", "#FFCCDA", "#4C00FF", "#CCFFE2", "#ED2D70", "#FF8E16"])
+"#E0DC62", "#FFCCDA", "#4C00FF", "#CCFFE2", "#ED2D70"])
 
 
 var tooltip = svg.append("g")
@@ -109,7 +182,7 @@ tooltip.append("text")
 
 
 //Read the CSV file
-d3.csv("data/drug-use-by-age.csv", function(d, i, columns) {
+d3.csv("data/drug-use-by-age3.csv", function(d, i, columns) {
   for (i = 1, t = 0; i < columns.length; ++i)
   t += d[columns[i]] = +d[columns[i]]				//Need +d[columns[i]] to change the string value into a number
   d.total = t
@@ -157,7 +230,7 @@ function (error, data){
   .on("mouseover", function() { tooltip.style("display", null); })
     .on("mouseout", function() { tooltip.style("display", "none"); })
     .on("mousemove", function(d) {
-      var xPosition = d3.mouse(this)[0] - 5;
+      var xPosition = d3.mouse(this)[0] + 10;
       var yPosition = d3.mouse(this)[1] - 5;
       tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")").style("pointer-events", "none");
       tooltip.select("text").text((d[1]-d[0]).toPrecision(4)+"%");
@@ -179,6 +252,12 @@ function (error, data){
     .style("text-anchor", "middle")
     .attr("font-size", "12px")
     .attr("font-weight", "bold");
+
+  yAxis = d3.axisLeft(y)
+
+  svg.append("g")
+  .attr("transform", "translate(1000,0)")
+  .call(yAxis);
 
 hover();
 
