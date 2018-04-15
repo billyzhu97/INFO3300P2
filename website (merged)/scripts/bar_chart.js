@@ -154,14 +154,28 @@ function hover(){
 
   drug_use.forEach(function(element){
     d3.selectAll("." + element + "_use").on("mouseover", function(){
-       d3.selectAll("." + element + "_use").style("opacity", 1);
-       d3.selectAll("#" + element + "_info").style("display", "block");
+      select(element);
+       // d3.selectAll("." + element + "_use").style("opacity", 1);
+       // d3.selectAll("#" + element + "_info").style("display", "block");
      })
-    d3.selectAll("." + element + "_use").on("mouseout", function(){
-      d3.selectAll("." + element + "_use").style("opacity", 0.5);
-      d3.selectAll("#" + element + "_info").style("display", "none");
-    })
+    // d3.selectAll("." + element + "_use").on("mouseout", function(){
+    //   d3.selectAll("." + element + "_use").style("opacity", 0.5);
+    //   d3.selectAll("#" + element + "_info").style("display", "none");
+    // })
 
   });
+
+  function select(choice){
+    drug_use.forEach(function(element){
+      if(element===choice){
+        d3.selectAll("." + element + "_use").style("opacity", 1);
+        d3.selectAll("#" + element + "_info").style("display", "block");
+      }
+      else{
+        d3.selectAll("." + element + "_use").style("opacity", 0.5);
+        d3.selectAll("#" + element + "_info").style("display", "none");
+      }
+    });
+  }
 
 }
