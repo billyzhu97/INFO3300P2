@@ -33,16 +33,6 @@ function hover(){
   //
   //
   //
-  // /*
-  // d3.selectAll(".crack_use").on("mouseover", function(){
-  //   d3.selectAll(".crack_use").style("opacity", 1);
-  //   d3.selectAll("#crack_info").style("display", "block");
-  // })
-  // d3.selectAll(".crack_use").on("mouseout", function(){
-  //   d3.selectAll(".crack_use").style("opacity", 0.5);
-  //   d3.selectAll("#crack_info").style("display", "none");
-  // })
-  // */
   //
   //
   //
