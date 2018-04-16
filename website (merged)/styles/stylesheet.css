@@ -14,6 +14,21 @@ h2{
   text-align: center;
 }
 
+#footnote{
+  padding-left: 100px;
+}
+
+#donut_intro{
+  text-align: center;
+  padding-right: 100px;
+  padding-left: 100px;
+}
+
+#intro{
+  padding-right: 100px;
+  padding-left: 100px;
+}
+
 #donut_chart{
   margin-right: auto;
   margin-left: auto;
@@ -222,7 +237,7 @@ polyline{
     margin-left: auto; 
     margin-right: auto;
     text-align: center;
-    color: red;
+    color: white;
 }
 
 #header{

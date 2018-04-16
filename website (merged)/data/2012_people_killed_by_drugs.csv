@@ -1,11 +1,11 @@
-Drug,Percentage,Count,Source
-Alcohol,0.052637816,2221,www.cdc.gov
-Cocaine,0.112788548,4759,www.cdc.gov
-Heroin,0.145779021,6151,www.cdc.gov
-Pain-Reliever,0.328198322,13878,www.cdc.gov
-Oxycontin,0.12250557,5169,www.cdc.gov
-Meth,0.053609518,2262,www.cdc.gov
-Sedative,0.183770204,7754,www.ncbi.nlm.nih.gov
-Marijuana,0,0,
-Hallucinogen,0,0,https://americanaddictioncenters.org/oxycontin-treatment/vs-oxycodone/
-Inhalant,0,0,http://www.consumered.org/learn/inhalant-abuse/statistics
+Drug,Median Frequency Use:,Percentage,Count,Source
+Alcohol,36,0.052637816,2221,www.cdc.gov
+Cocaine,9,0.112788548,4759,www.cdc.gov
+Heroin,85,0.145779021,6151,www.cdc.gov
+Pain-Reliever,14,0.328198322,13878,www.cdc.gov
+Oxycontin,14,0.12250557,5169,www.cdc.gov
+Meth,38,0.053609518,2262,www.cdc.gov
+Sedative,22,0.183770204,7754,www.ncbi.nlm.nih.gov
+Marijuana,44,0,0,
+Hallucinogen,0,0,0,https://americanaddictioncenters.org/oxycontin-treatment/vs-oxycodone/
+Inhalant,0,0,0,http://www.consumered.org/learn/inhalant-abuse/statistics
