@@ -80,6 +80,7 @@ function donutChart() {
       var label = svg.select('.labelName').selectAll('text')
       .data(pie)
       .enter().append('text')
+      .attr("fill", "white")
       .attr('dy', '.35em')
       .html(function(d) {
         if (!(d.data[category]=="Marijuana" || d.data[category]=="Hallucinogen" || d.data[category]=="Inhalant")){

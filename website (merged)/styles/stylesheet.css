@@ -5,8 +5,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: #333333;
-    width: 1200px;
+  color: white;
+  background-color: black;
     
 }
 
@@ -14,11 +14,16 @@ h2{
   text-align: center;
 }
 
+#donut_chart{
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
 #donut_chart_container{
   width: 90%;
   margin-right:auto;
   margin-left:auto;
-  
 }
 
 #donut_chart_container p{
@@ -30,7 +35,7 @@ h2{
 /*Styling for the lines connecting the labels to the slices*/
 polyline{
   opacity: .5;
-  stroke: black;
+  stroke: white;
   stroke-width: 5px;
   fill: none;
 }
@@ -41,17 +46,25 @@ polyline{
   font-weight: 700;
 }
 
+.initial_text{
+  fill: white;
+}
+
+.toolCircle{
+  fill: white;
+}
+
 #alcohol_icon{
-  background-color:#420039;
+  background-color:#A9C5EB;
   opacity:0.5;
 }
 
 #marijuana_icon{
-  background-color:#932F6D;
+  background-color:#FF97CB;
   opacity:0.5;
 }
 #cocaine_icon{
-  background-color:#E07BE0;
+  background-color:#CAFFD8;
   opacity:0.5;
 }
 
@@ -63,7 +76,7 @@ polyline{
 */
 
 #heroin_icon{
-  background-color:#DCCCFF;
+  background-color:#FFAC62;
   opacity:0.5;
 }
 #hallucinogen_icon{
@@ -91,7 +104,7 @@ polyline{
   opacity:0.5;
 }
 #meth_icon{
-  background-color:#CCFFE2;
+  background-color:#61F200;
   opacity:0.5;
 }
 #sedative_icon{
@@ -181,7 +194,6 @@ polyline{
     
     height:300px;
     width:100%;
-    background-color: white;
     opacity: .5;
     position: absolute;
     
@@ -215,6 +227,10 @@ polyline{
 
 #header{
     text-align: center;
+}
+
+.axisWhite text{
+  fill: white;
 }
 
 
