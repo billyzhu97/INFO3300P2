@@ -166,13 +166,29 @@ polyline{
   height: 250px;
 }
 
-#information{
-    height: 250px;
-    width: 50%;
+#information_container{
+    
+    height: 300px;
+    width: 65%;
     margin-top: 25px;
     margin-left: auto; 
     margin-right: auto;
+    position: relative;
     
+}
+
+#information_background{
+    
+    height:300px;
+    width:100%;
+    background-color: white;
+    opacity: .5;
+    position: absolute;
+    
+}
+
+#information{ 
+    position: absolute;
 }
 
 #clickBox{
@@ -186,6 +202,7 @@ polyline{
     width: 75%;
     margin-left: auto; 
     margin-right: auto;
+    height: 550;
 }
 
 #clickHere h3{

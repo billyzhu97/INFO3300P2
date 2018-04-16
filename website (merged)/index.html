@@ -40,7 +40,10 @@
         <img src="images/sedative.png" height="64" width="64" class="sedative_use" id="sedative_icon"/>
   </div>
     <div id="clickHere"><h3>Click on an icon to learn more about the drug!</h3></div>
-  <div id = "information">
+    <div id = information_container>
+    <div id = "information_background"></div>
+    <div id = "information">
+      
 
     <!-- ALCOHOL -->
     <div id="alcohol_info">
@@ -239,8 +242,9 @@
       <p>Have a problem with Tranquilizers? <a href="https://www.samhsa.gov/find-help/national-helpline">Drug Abuse Recovery</a></p>
     </div>
 
-
-  </div>
+    </div>
+    </div>
+  
   <!--Look at it so that the text in information is empty. Then when we hover over something, we change the inner text -->
 
 
@@ -288,7 +292,7 @@ d3.csv('data/2012_people_killed_by_drugs.csv', function(error, data) {
 //Set up the margins and width and height
 var margin = {top: 50, left: 50, bottom: 50, right: 50}
 var width = 1000 - margin.left - margin.right
-var height = 600 - margin.top - margin.bottom
+var height = 500 - margin.top - margin.bottom
 
 
 //Create the SVG for the graph
@@ -428,21 +432,22 @@ hover();
         .attr("width", 64)
         .attr("height", 64)
         .on("click", function(){
-            var current = element + "_info"
+            
+            var current = element + "_rect"
             var active = current.active ? false : true ,
                 newDisplay = active ? "block" : "none";
-            
-            
+
             drug_use.forEach(function(element){
                 d3.selectAll("#" + element + "_info").style("display", "none");
             });
-            
+
             d3.selectAll("#" + element + "_info").style("display", newDisplay);
-            
             
         });
         
     })
+    
+  
 
 
 })
