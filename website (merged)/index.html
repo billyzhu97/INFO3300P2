@@ -8,21 +8,38 @@
   <title>INFO 3300 Project 2</title>
 </head>
 <body>
+    <div id = "header">
+        <h1>Statistics on Drug Use and Abuse in 2012</h1>
+        <h3><br/>Hover over the bars to see the percent of people in that age group who had tried that drug in the last 12 months (data from 2012)</h3>
+    </div>
   <div id="barchart"></div>
   <div id="clickBox">
-    <img src="images/alcohol.png" height="64" width="64" class="alcohol_use" id="alc_icon"></img>
-    <img src="images/marijuana.png" height="64" width="64" class="marijuana_use" id="mar_icon"></img>
-    <img src="images/cocaine.png" height="64" width="64" class="cocaine_use" id="cocaine_icon"></img>
-    <img src="images/heroin.png" height="64" width="64" class="heroin_use" id="heroin_icon"></img>
-    <img src="images/hallucinogen.png" height="64" width="64" class="hallucinogen_use" id="hal_icon"></img>
-    <img src="images/inhalant.png" height="64" width="64" class="inhalant_use" id="inhalant_icon"></img>
-    <img src="images/pain_reliever.png" height="64" width="64" class="pain_reliever_use" id="pain_icon"></img>
-    <img src="images/oxycontin.png" height="64" width="64" class="oxycontin_use" id="oxy_icon"></img>
-    <img src="images/tranquilizer.png" height="64" width="64" class="tranquilizer_use" id="tranq_icon"></img>
-    <img src="images/stimulant.png" height="64" width="64" class="stimulant_use" id="stim_icon"></img>
-    <img src="images/meth.png" height="64" width="64" class="meth_use" id="meth_icon"></img>
-    <img src="images/sedative.png" height="64" width="64" class="sedative_use" id="sedative_icon"></img>
+        <svg style="position:absolute;" height="64" width="64" fill="none" id="alcohol_click"></svg>
+        <img src="images/alcohol.png" height="64" width="64" class="alcohol_use" id="alcohol_icon"/>
+        <svg style="position:absolute;" height="64" width="64" fill="none" id="marijuana_click"></svg>
+        <img src="images/marijuana.png" height="64" width="64" class="marijuana_use" id="marijuana_icon"/>
+        <svg style="position:absolute;" height="64" width="64" fill="none" id="cocaine_click"></svg>
+        <img src="images/cocaine.png" height="64" width="64" class="cocaine_use" id="cocaine_icon"/>
+        <svg style="position:absolute;" height="64" width="64" fill="none" id="heroin_click"></svg>
+        <img src="images/heroin.png" height="64" width="64" class="heroin_use" id="heroin_icon"/>
+        <svg style="position:absolute;" height="64" width="64" fill="none" id="hallucinogen_click"></svg>
+        <img src="images/hallucinogen.png" height="64" width="64" class="hallucinogen_use" id="hallucinogen_icon"/>
+        <svg style="position:absolute;" height="64" width="64" fill="none" id="inhalant_click"></svg>
+        <img src="images/inhalant.png" height="64" width="64" class="inhalant_use" id="inhalant_icon"/>
+        <svg style="position:absolute;" height="64" width="64" fill="none" id="pain_reliever_click"></svg>
+        <img src="images/pain_reliever.png" height="64" width="64" class="pain_reliever_use" id="pain_reliever_icon"/>
+        <svg style="position:absolute;" height="64" width="64" fill="none" id="oxycontin_click"></svg>
+        <img src="images/oxycontin.png" height="64" width="64" class="oxycontin_use" id="oxycontin_icon"/>
+        <svg style="position:absolute;" height="64" width="64" fill="none" id="tranquilizer_click"></svg>
+        <img src="images/tranquilizer.png" height="64" width="64" class="tranquilizer_use" id="tranquilizer_icon"/>
+        <svg style="position:absolute;" height="64" width="64" fill="none" id="stimulant_click"></svg>
+        <img src="images/stimulant.png" height="64" width="64" class="stimulant_use" id="stimulant_icon"/>
+        <svg style="position:absolute;" height="64" width="64" fill="none" id="meth_click"></svg>
+        <img src="images/meth.png" height="64" width="64" class="meth_use" id="meth_icon"/>
+        <svg style="position:absolute;" height="64" width="64" fill="none" id="sedative_click"></svg>
+        <img src="images/sedative.png" height="64" width="64" class="sedative_use" id="sedative_icon"/>
   </div>
+    <div id="clickHere"><h3>Click on an icon to learn more about the drug!</h3></div>
   <div id = "information">
 
     <!-- ALCOHOL -->
@@ -144,11 +161,83 @@
       <p>To learn more about pain killers' effect, please visit <a href="https://drugabuse.com/library/prescription-painkiller-faq/">drugabuse.com</a></p>
       <p>Have a problem with pain killers? <a href="https://www.therecoveryvillage.com/painkiller-addiction/side-effects/#gref">Pain Killers Recovery</a></p>
     </div>
-    <div id="oxycontin_info"> <p> Information about oxycontin</p></div>
-    <div id="tranquilizer_info"> <p> Information about tranquilizer</p></div>
-    <div id="stimulant_info"> <p> Information about stimulants</p></div>
-    <div id="meth_info"> <p> Information about meth</p></div>
-    <div id="sedative_info"> <p> Information about sedative</p></div>
+    <div id="oxycontin_info"> 
+        <!-- https://www.webmd.com/drugs/2/drug-2798/oxycontin-oral/details -->
+        <h3> Oxycontin </h3>
+      <p> Oxycontin is a tablet that is taken to reduce long term pain. It acts on the brain to alter the way your body responds to and feels pain result in the following:</p>
+      <br>
+      <ul>
+        <li>Alleviation of pain</li>
+        <li>Naseau </li>
+        <li>Weakness</li>
+        <li>Drowsiness</li>
+      </ul>
+      <br>
+      <p>To learn more about oxycontin's effect, please visit <a href="https://www.drugabuse.gov/drugs-abuse/opioids">The National Institute on Drug Abuse</a></p>
+
+      <p>Have a problem with oxycontin? <a href="https://www.samhsa.gov/find-help/national-helpline">Drug Abuse Recovery</a></p>
+    </div>
+    <div id="tranquilizer_info">
+        <h3> Tranquilizer </h3>
+      <p> Tranquilizers form a category of drugs that are primarily used to treat psychoses and anxiety, but can be abused and can become addicting. Tranquilizers result in the following:</p>
+      <br>
+      <ul>
+        <li>Calming </li>
+        <li>Reduces effects of anxiety </li>
+        <li>Sleeping</li>
+      </ul>
+      <br>
+      <p>To learn more about tranquilizer's effect, please visit <a href="https://www.drugabuse.gov/drugs-abuse/commonly-abused-drugs-charts#CNSdepressants">The National Institute on Drug Abuse</a></p>
+
+      <p>Have a problem with Tranquilizers? <a href="https://www.samhsa.gov/find-help/national-helpline">Drug Abuse Recovery</a></p>
+    </div>
+    <div id="stimulant_info"> 
+        <h3> Stimulant </h3>
+      <p> Stimulants, including amphetamines, form a category of drugs that are used to increase energy and alertness. There are prescription stimulants, but they can be abused and can become addictive. Stimulants result in the following:</p>
+      <br>
+      <ul>
+        <li>Raise levels of dopamine </li>
+        <li>Increased blood pressure </li>
+        <li>Increased heart rate</li>
+        <li>Possible anxiety</li>
+        <li>Possible depression</li>
+      </ul>
+      <br>
+      <p>To learn more about a stimulant's effect, please visit <a href="https://www.drugabuse.gov/publications/research-reports/misuse-prescription-drugs/which-classes-prescription-drugs-are-commonly-misused">The National Institute on Drug Abuse</a></p>
+
+      <p>Have a problem with Stimulants? <a href="https://www.samhsa.gov/find-help/national-helpline">Drug Abuse Recovery</a></p>
+    </div>
+    <div id="meth_info">
+        <h3> Meth </h3>
+        <!-- https://www.drugfreeworld.org/drugfacts/crystalmeth/the-stages-of-the-meth-experience.html-->
+      <p> Meth, a white powder or pill, is a stimulant that can be used to help treat ADHD and facilitate weight loss, but is often abused for a thirty minute rush, followed by a high that makes the user feel argumentative. The delusional side effects can cause the user to fixate on a meaningless activity for hours. Using Meth results in the following:  </p>
+      <br>
+      <ul>
+        <li>Raise levels of dopamine </li>
+        <li>Increased blood pressure </li>
+        <li>Increased heart rate</li>
+        <li>Loss of appetite</li>
+        <li>Increased Activity</li>
+      </ul>
+      <br>
+      <p>To learn more about a Meth's effect, please visit <a href="https://www.drugabuse.gov/publications/drugfacts/methamphetamine">The National Institute on Drug Abuse</a></p>
+
+      <p>Have a problem with Meth? <a href="https://www.samhsa.gov/find-help/national-helpline">Drug Abuse Recovery</a></p>
+    </div>
+    <div id="sedative_info"> 
+        <h3> Sedative </h3>
+      <p> Sedatives form a category of drugs that slow brain activity, but can be abused and can become addicting. Sedatives result in the following:</p>
+      <br>
+      <ul>
+        <li>Calming </li>
+        <li>Reduces effects of anxiety </li>
+        <li>Sleeping</li>
+      </ul>
+      <br>
+      <p>To learn more about sedative's effect, please visit <a href="https://drugabuse.com/library/sedative-abuse-detox/">The National Institute on Drug Abuse</a></p>
+
+      <p>Have a problem with Tranquilizers? <a href="https://www.samhsa.gov/find-help/national-helpline">Drug Abuse Recovery</a></p>
+    </div>
 
 
   </div>
@@ -157,7 +246,7 @@
 
 
   <div id="donut_chart_container">
-    <h2>People Killed by Drugs in 2012</h2>
+    <h2>Drug Overdoses in 2012</h2>
     <div id="donut_chart"></div>
     <p>
       * Stimulants have been grouped with methamphetamine.
@@ -178,6 +267,7 @@
 </body>
 <script>
 
+
 var donut = donutChart()
 .width(980)
 .height(600)
@@ -197,8 +287,8 @@ d3.csv('data/2012_people_killed_by_drugs.csv', function(error, data) {
 
 //Set up the margins and width and height
 var margin = {top: 50, left: 50, bottom: 50, right: 50}
-var width = 750 - margin.left - margin.right
-var height = 500 - margin.top - margin.bottom
+var width = 1000 - margin.left - margin.right
+var height = 600 - margin.top - margin.bottom
 
 
 //Create the SVG for the graph
@@ -209,7 +299,7 @@ var svg = d3.select("#barchart")
 .append("g")				//groups all the elements together
 
 //Create a scaleBand, this has an ordinal domain and continuous range
-var y = d3.scaleBand().rangeRound([0, height])
+var y = d3.scaleBand().rangeRound([50, height])
 .paddingInner(0.30)
 .align(0.5)
 
@@ -254,7 +344,6 @@ function (error, data){
 
   //Keys contains the headers
   var keys = data.columns.slice(1)
-  console.log(keys)
 
   //Returns the ages in an array
   y.domain(data.map(function(d){return d.age}))
@@ -269,6 +358,10 @@ function (error, data){
 
   var tempKey;
 
+    
+    // https://bl.ocks.org/mjfoster83/7c9bdfd714ab2f2e39dd5c09057a55a0
+    // For tooltips
+    
   d3.select("g").append("g")
 
   .selectAll("g")
@@ -311,13 +404,46 @@ function (error, data){
     .attr("font-size", "12px")
     .attr("font-weight", "bold");
 
-  yAxis = d3.axisLeft(y)
+  var yAxis = d3.axisLeft(y)
 
   svg.append("g")
-  .attr("transform", "translate(1000,0)")
+  .attr("transform", "translate(975,0)")
   .call(yAxis);
 
 hover();
+
+ var drug_use = ["alcohol", "marijuana", "cocaine",
+    "heroin", "hallucinogen", "inhalant", "pain_reliever",
+    "oxycontin", "tranquilizer", "stimulant", "meth",
+    "sedative"];
+    
+    
+    drug_use.forEach(function(element){
+        d3.select("#clickBox")
+        .select("#" + element + "_click")
+        .append("rect")
+        .attr("id", element + "_rect")
+        .attr("fill", "#eee")
+        .attr("fill-opacity", "0.2")
+        .attr("width", 64)
+        .attr("height", 64)
+        .on("click", function(){
+            var current = element + "_info"
+            var active = current.active ? false : true ,
+                newDisplay = active ? "block" : "none";
+            
+            
+            drug_use.forEach(function(element){
+                d3.selectAll("#" + element + "_info").style("display", "none");
+            });
+            
+            d3.selectAll("#" + element + "_info").style("display", newDisplay);
+            
+            
+        });
+        
+    })
+
 
 })
 

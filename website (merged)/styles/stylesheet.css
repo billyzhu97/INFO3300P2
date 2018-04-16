@@ -6,6 +6,8 @@
 body {
   font-family: 'Roboto', sans-serif;
   color: #333333;
+    width: 1200px;
+    
 }
 
 h2{
@@ -13,8 +15,10 @@ h2{
 }
 
 #donut_chart_container{
-  margin: 20px;
-  width: 1000px;
+  width: 90%;
+  margin-right:auto;
+  margin-left:auto;
+  
 }
 
 #donut_chart_container p{
@@ -37,12 +41,12 @@ polyline{
   font-weight: 700;
 }
 
-#alc_icon{
+#alcohol_icon{
   background-color:#420039;
   opacity:0.5;
 }
 
-#mar_icon{
+#marijuana_icon{
   background-color:#932F6D;
   opacity:0.5;
 }
@@ -62,7 +66,7 @@ polyline{
   background-color:#DCCCFF;
   opacity:0.5;
 }
-#hal_icon{
+#hallucinogen_icon{
   background-color:#A077FF;
   opacity:0.5;
 }
@@ -70,19 +74,19 @@ polyline{
   background-color:#FF00DD;
   opacity:0.5;
 }
-#pain_icon{
+#pain_reliever_icon{
   background-color:#2DB7BF;
   opacity:0.5;
 }
-#oxy_icon{
+#oxycontin_icon{
   background-color:#E0DC62;
   opacity:0.5;
 }
-#tranq_icon{
+#tranquilizer_icon{
   background-color:#FFCCDA;
   opacity:0.5;
 }
-#stim_icon{
+#stimulant_icon{
   background-color:#4C00FF;
   opacity:0.5;
 }
@@ -99,56 +103,101 @@ polyline{
 
 #alcohol_info{
   display: none;
+  height: 250px;
 }
 
 #marijuana_info{
   display: none;
+  height: 250px;
 }
 
 #cocaine_info{
   display: none;
+  height: 250px;    
 }
 
 
-/*
 #crack_info{
   display: none;
 }
-*/
 
 #heroin_info{
   display: none;
+  height: 250px;
 }
 
 #hallucinogen_info{
   display: none;
+  height: 250px;
 }
 
 #inhalant_info{
   display: none;
+  height: 250px;
 }
 
 #pain_reliever_info{
   display: none;
+  height: 250px;
 }
 
 #oxycontin_info{
   display: none;
+  height: 250px;
 }
 
 #tranquilizer_info{
   display: none;
+  height: 250px;
 }
 
 #stimulant_info{
   display: none;
+  height: 250px;
 }
 
 #meth_info{
   display: none;
+  height: 250px;
 }
 
 #sedative_info{
-  display: none;
+  display: none; 
+  height: 250px;
 }
+
+#information{
+    height: 250px;
+    width: 50%;
+    margin-top: 25px;
+    margin-left: auto; 
+    margin-right: auto;
+    
+}
+
+#clickBox{
+    width: 75%;
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
+}
+
+#barchart{
+    width: 75%;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+#clickHere h3{
+    width: 75%;
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
+    color: red;
+}
+
+#header{
+    text-align: center;
+}
+
 

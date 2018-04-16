@@ -169,13 +169,14 @@ function hover(){
     drug_use.forEach(function(element){
       if(element===choice){
         d3.selectAll("." + element + "_use").style("opacity", 1);
-        d3.selectAll("#" + element + "_info").style("display", "block");
+        //d3.selectAll("#" + element + "_info").style("display", "block");
       }
       else{
         d3.selectAll("." + element + "_use").style("opacity", 0.5);
-        d3.selectAll("#" + element + "_info").style("display", "none");
+        //d3.selectAll("#" + element + "_info").style("display", "none");
       }
     });
   }
 
 }
+
