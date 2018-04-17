@@ -27,6 +27,7 @@ h2{
 #intro{
   padding-right: 100px;
   padding-left: 100px;
+  text-align: center;
 }
 
 #donut_chart{
@@ -79,7 +80,7 @@ polyline{
   opacity:0.5;
 }
 #cocaine_icon{
-  background-color:#CAFFD8;
+  background-color:#B5FFC8;
   opacity:0.5;
 }
 

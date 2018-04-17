@@ -11,7 +11,7 @@
     <div id = "header">
         <h1>Statistics on Drug Use and Abuse in 2012</h1>
         <h3 id="intro"><br> Drug abuse and addiction has hurt families since 2012. We hope that we can shed some information on the extent of this problem, and provide some resources for help. </h3>
-        <h3><br/>Hover over the bars to see the percent of people in that age group who had tried that drug in the last 12 months (data from 2012).</h3>
+        <h3 id="intro"><br/>Click on the bars to compare drug usage over the age groups. Hover over the bars to see the percent of people in a specific age group who have tried that drug in the last 12 months (data from 2012).</h3>
     </div>
   <div id="barchart"></div>
   <div id="clickBox">
@@ -249,11 +249,13 @@
   <!--Look at it so that the text in information is empty. Then when we hover over something, we change the inner text -->
 
 
-
   <div id="donut_chart_container">
     <h2>Drug Overdoses in 2012</h2>
-    <h3 id ="donut_intro"><br>Hover over the donut graph to see the percentage of all drug related deaths caused by a certain drug, and the median times that drug was used in the last 12 months by a user.</h3> 
+    <h3 id ="donut_intro"><br>Hover over the donut graph to see the percentage of all drug related deaths caused by a certain drug, and the median times that drug was used in the last 12 months by drug users.</h3> 
     <div id="donut_chart"></div>
+    <h3 id="donut_intro"> As can be seen from the chart, opioids (which include Oxycontin, Pain-Relievers, and Heroin) cause a large portion of drug-related deaths. Today, the opioid crisis is a problem many leaders are trying to solve. </h3>
+    <br>
+    <br>
     <div id = "footnote">
     <p>
       * Stimulants have been grouped with methamphetamine.
@@ -315,7 +317,7 @@ var y = d3.scaleBand().rangeRound([50, height])
 var x = d3.scaleLinear().rangeRound([0, width])
 
 //The color scheme for the graph
-var color = d3.scaleOrdinal().range(["#A9C5EB", "#FF97CB", "#CAFFD8", "#FFAC62", "#A077FF", "#FF00DD", "#2DB7BF",
+var color = d3.scaleOrdinal().range(["#A9C5EB", "#FF97CB", "#B5FFC8", "#FFAC62", "#A077FF", "#FF00DD", "#2DB7BF",
 "#E0DC62", "#FFCCDA", "#4C00FF", "#61F200", "#ED2D70"])
 
 
